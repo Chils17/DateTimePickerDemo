@@ -13,47 +13,50 @@
         android:orientation="vertical">
 
         <EditText
-            android:hint="Start Date"
             android:id="@+id/editDate1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusable="false"
-            android:longClickable="false" />
+            android:hint="Start Date"
+            android:longClickable="false"
+            android:textColorHint="@android:color/black" />
 
         <EditText
-            android:hint="End Date"
             android:id="@+id/editDate2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:focusable="false"
-            android:longClickable="false" />
+            android:hint="End Date"
+            android:longClickable="false"
+            android:textColorHint="@android:color/black" />
 
         <TextView
-            android:hint="Calculation"
-            android:textStyle="bold"
             android:id="@+id/txt_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:hint="Calculation"
             android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"
             android:textSize="16sp" />
 
         <Button
-            android:textColor="@android:color/black"
             android:id="@+id/btn_date_diff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Date" />
+            android:background="@android:color/black"
+            android:text="Date"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 
     <View
-        android:background="@android:color/black"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1dp"
+        android:background="@android:color/black" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,22 +66,24 @@
         android:orientation="vertical">
 
         <EditText
-            android:hint="Start Date"
             android:id="@+id/editStart"
-            android:focusable="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:longClickable="false" />
+            android:focusable="false"
+            android:hint="Start Date"
+            android:longClickable="false"
+            android:textColorHint="@android:color/black" />
 
 
         <EditText
-            android:hint="End Date"
             android:id="@+id/editEnd"
-            android:focusable="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:longClickable="false" />
+            android:focusable="false"
+            android:hint="End Date"
+            android:longClickable="false"
+            android:textColorHint="@android:color/black" />
 
     </LinearLayout>
 
