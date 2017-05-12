@@ -64,7 +64,10 @@ public class TimePickerActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.editTime1:
                 // Get Current Time
-                setCalender();
+                final Calendar c = Calendar.getInstance();
+                mHour = c.get(Calendar.HOUR_OF_DAY);
+                mMinute = c.get(Calendar.MINUTE);
+                mAm = c.get(Calendar.AM_PM);
 
                 // Launch Time Picker Dialog
                 TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -101,7 +104,10 @@ public class TimePickerActivity extends AppCompatActivity implements View.OnClic
 
             case R.id.editTime2:
                 // Get Current Time
-                setCalender();
+                final Calendar calendar = Calendar.getInstance();
+                mHour = calendar.get(Calendar.HOUR_OF_DAY);
+                mMinute = calendar.get(Calendar.MINUTE);
+                mAm = calendar.get(Calendar.AM_PM);
 
                 // Launch Time Picker Dialog
                 TimePickerDialog timePickerDialog1 = new TimePickerDialog(this,
@@ -162,7 +168,10 @@ public class TimePickerActivity extends AppCompatActivity implements View.OnClic
 
             case R.id.editStartTime:
                 // Get Current Time
-                setCalender();
+                final Calendar calendar1 = Calendar.getInstance();
+                mHour = calendar1.get(Calendar.HOUR_OF_DAY);
+                mMinute = calendar1.get(Calendar.MINUTE);
+                mAm = calendar1.get(Calendar.AM_PM);
 
                 // Launch Time Picker Dialog
                 TimePickerDialog timePickerDialog2 = new TimePickerDialog(this,
@@ -201,7 +210,10 @@ public class TimePickerActivity extends AppCompatActivity implements View.OnClic
                 final String startTime = editStartTime.getText().toString();
                 if (!startTime.isEmpty()) {
                     // Get Current Time
-                    setCalender();
+                    final Calendar calendar2 = Calendar.getInstance();
+                    mHour = calendar2.get(Calendar.HOUR_OF_DAY);
+                    mMinute = calendar2.get(Calendar.MINUTE);
+                    mAm = calendar2.get(Calendar.AM_PM);
 
                     // Launch Time Picker Dialog
                     TimePickerDialog timePickerDialog3 = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
@@ -243,16 +255,6 @@ public class TimePickerActivity extends AppCompatActivity implements View.OnClic
 
                         }
                     }, mHour, mMinute, false);
-
-                    DateFormat df = new SimpleDateFormat("hh:mm a");
-
-                    try {
-                        Date date = df.parse(startTime);
-                        //timePickerDialog3.getDatePicker().setMinDate(date.getTime());
-
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
                     timePickerDialog3.show();
 
                     break;
@@ -261,14 +263,6 @@ public class TimePickerActivity extends AppCompatActivity implements View.OnClic
                 }
         }
     }
-
-    private void setCalender() {
-        final Calendar calendar2 = Calendar.getInstance();
-        mHour = calendar2.get(Calendar.HOUR_OF_DAY);
-        mMinute = calendar2.get(Calendar.MINUTE);
-        mAm = calendar2.get(Calendar.AM_PM);
-    }
-
 
     public void printDifference(Date startDate, Date endDate) {
 
@@ -301,5 +295,6 @@ public class TimePickerActivity extends AppCompatActivity implements View.OnClic
                 "%d days, %d hours, %d minutes, %d seconds%n",
                 elapsedDays,
                 elapsedHours, elapsedMinutes, elapsedSeconds);
+
     }
 }
